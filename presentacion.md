@@ -3,10 +3,11 @@ title:
 - Registro Unificado de Actividades
 author:
 - Franco Ganga
+institute:
+- Universidad Nacional Arturo Jauretche - Instituto de Ingeniería y Agronomía
 theme:
 - metropolis
 header-includes:
-- \usepackage{listings}
 - \usepackage{xcolor}
 ---
 
@@ -19,14 +20,46 @@ realizadas por cada persona: actualmente, estos datos son almacenados en planill
 documentos escritos.
 El propósito de este proyecto es ofrecer una solución a este problema.
 
+
+#
+
+\begin{columns}
+    \begin{column}{.5\textwidth}
+    \centering
+    \fontsize{20}{10}\selectfont
+        \textbf{
+                Objetivos
+        }
+    \end{column}
+    \begin{column}{.5\textwidth}
+    \includegraphics[width=\textwidth]{/home/unaj/objetivos.png}
+    \end{column}
+\end{columns}
+
 # Objetivos
 
 
-\begin{itemize}
-    \item<1-> Plataforma web de administración.
-    \item<2-> Integración con datos de sistemas externos.
-    \item<3-> Servicio API REST.
-\end{itemize}
+\definecolor{custom}{RGB}{196,174,84}
+\setbeamercovered{transparent}
+\begin{columns}[T]
+    \begin{column}{.5\textwidth}
+        \large{\textbf{Objetivos por alcanzar}}
+        {\color{custom}\par\noindent\rule{1.2\textwidth}{0.9pt}}
+            \begin{itemize}
+                \item<1-> Plataforma web de administración.
+                \item<2-> Integración con datos de sistemas externos.
+                \item<3-> Servicio API REST.
+            \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+        \begin{itemize}[<+->]
+            \item[]
+                \only<1>{\includegraphics[width=0.8\textwidth]{/home/unaj/web_admin.png}}
+                \only<2>{\includegraphics[width=0.8\textwidth]{/home/unaj/integracion.png}}
+                \only<3>{\includegraphics[width=0.8\textwidth]{/home/unaj/api.png}}
+        \end{itemize}
+    \end{column}
+\end{columns}
 
 # Componentes utilizados
 
@@ -35,6 +68,7 @@ El propósito de este proyecto es ofrecer una solución a este problema.
 \begin{columns}[T]
     \begin{column}{.5\textwidth}
         \begin{itemize}
+            \Large
             \item<1-> Symfony
             \item<2-> Doctrine
             \item<3-> Sonata
@@ -107,6 +141,9 @@ El propósito de este proyecto es ofrecer una solución a este problema.
     \end{column}
 \end{columns}
 
+
+
+
 # Acciones: Lista
 
 \includegraphics[width=\textwidth]{/home/unaj/sonata_lista.png}
@@ -118,6 +155,25 @@ El propósito de este proyecto es ofrecer una solución a este problema.
 # Acciones: Edición
 
 \includegraphics[width=\textwidth]{/home/unaj/sonata_editar.png}
+
+# Doctrine
+
+\definecolor{custom}{RGB}{196,174,84}
+\setbeamercovered{transparent}
+\begin{columns}[T]
+    \begin{column}{.5\textwidth}
+        \large{\textbf{ORM: Doctrine}}
+        {\color{custom}\par\noindent\rule{1.3\textwidth}{0.9pt}}
+    \begin{itemize}
+        \item<1-> Basado en Hibernate
+        \item<2-> Integración con Sonata
+        \item<3-> Migraciones
+    \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+        \includegraphics[width=0.5\textwidth]{/home/unaj/doctrine.png}
+    \end{column}
+\end{columns}
 
 #
 
@@ -136,7 +192,6 @@ El propósito de este proyecto es ofrecer una solución a este problema.
 
 # Actividad
 
-
 \includegraphics[width=\textwidth, height=0.5\textwidth]{/home/unaj/actividad-modelo.png}
 
 # Pasantia
@@ -147,6 +202,111 @@ El propósito de este proyecto es ofrecer una solución a este problema.
 \begin{center}
 \includegraphics[width=0.8\textwidth, height=0.4\textwidth]{/home/unaj/mpr-new.png}
 \end{center}
+
+#
+
+\centering\Huge \textbf{Herencia de Clase}
+
+# Herencia de clase
+
+\huge{Cada tabla \textit{hija} almacena sus datos en una tabla propia}
+
+# Herencia de clase
+
+\huge{Las tablas \textit{hijas} poseen una referencia a la id del \textit{padre}}
+
+#
+
+\centerline{\Huge\textbf{Mapeo}}
+\vspace{1cm}
+\centerline{\Huge\textbf{Objeto-Relacional}}
+
+# Mapeo Objeto - Relacional: Metadata (Anotaciones)
+
+```php
+<?php
+/** @Entity */
+class Message
+{
+    /** @Column(type="integer") */
+    private $id;
+    /** @Column(length=140) */
+    private $text;
+    /** @Column(type="datetime", name="posted_at") */
+    private $postedAt;
+}
+```
+
+# Mapeo Objeto - Relacional: Metadata (XML)
+```xml
+<doctrine-mapping>
+  <entity name="Message">
+    <field name="id" type="integer" />
+    <field name="text" length="140" />
+    <field name="postedAt" column="posted_at" type="datetime" />
+  </entity>
+</doctrine-mapping>
+```
+
+# Mapeo Objeto - Relacional: Metadata (YAML)
+```yaml
+Message:
+  type: entity
+  fields:
+    id:
+      type: integer
+    text:
+      length: 140
+    postedAt:
+      type: datetime
+      column: posted_at
+```
+
+#
+\begin{columns}
+    \begin{column}{.5\textwidth}
+    \centering
+    \fontsize{20}{10}\selectfont
+        \textbf{
+                Relaciones
+        }
+    \end{column}
+    \begin{column}{.5\textwidth}
+    \includegraphics[width=\textwidth]{/home/unaj/relaciones.png}
+    \end{column}
+\end{columns}
+
+# Relaciones
+
+    
+\definecolor{custom}{RGB}{196,174,84}
+\setbeamercovered{transparent}
+\begin{columns}[T]
+    \begin{column}{.5\textwidth}
+        \Large{\textbf{Tipos de Relaciones}}
+        {\color{custom}\par\noindent\rule{1.2\textwidth}{0.9pt}}
+            \begin{itemize}
+                \large
+                \item<1-> Unidireccionales
+                \item<2-> Bidireccionales
+            \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+        \begin{itemize}[<+->]
+            \item[]
+                \only<1>{\includegraphics[width=0.8\textwidth]{/home/unaj/unidireccional.png}}
+                \only<2>{\includegraphics[width=0.8\textwidth]{/home/unaj/bidireccional2.png}}
+        \end{itemize}
+    \end{column}
+\end{columns}
+
+# Lados de la Relación {.t}
+\definecolor{custom}{RGB}{196,174,84}
+\Large{\textbf{Tipos de Relaciones}}
+\vspace{0pt}
+\color{custom}\par\noindent\rule{0.7\textwidth}{0.9pt}
+
+
 
 #
 
@@ -292,6 +452,7 @@ admin.movilidad_rtf:
 
 
 \centerline{\huge Rutas base de }
+\vspace{3mm}
 \centerline{\huge Miembros de proyecto:}
 \begin{center}
 \textbf{\large/miembroproyecto/{id}/(show | edit)}
@@ -313,4 +474,3 @@ admin.movilidad_rtf:
 - [addChild, ['@admin.miembro_proyecto', 'proyecto']]
 ```
 
-\input{testInput.tex}
