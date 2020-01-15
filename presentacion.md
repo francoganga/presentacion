@@ -743,4 +743,79 @@ admin.movilidad_rtf:
 \includegraphics[width=\textwidth]{/home/unaj/PPSDOC/image/vista_persona.png}
 \end{center}
 
+#
+
+\begin{center}
+    \huge{\textbf{Integración con Mapuche}}
+\end{center}
+
+# Integración: Mapuche
+
+\definecolor{custom}{RGB}{196,174,84}
+\setbeamercovered{transparent}
+\begin{columns}[T]
+    \begin{column}{.5\textwidth}
+        \Large{\textbf{En qué consiste}}
+        {\color{custom}\par\noindent\rule{1.2\textwidth}{0.9pt}}
+            \begin{itemize}
+                \item<1-> Obtención de datos externos a través de HTTP
+                \item<2-> Llenar entidades con datos obtenidos
+            \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+        \begin{itemize}[<+->]
+            \item[]
+                {\includegraphics[width=0.8\textwidth]{/home/unaj/api.png}}
+        \end{itemize}
+    \end{column}
+\end{columns}
+
+#
+
+\begin{center}
+    \huge{\textbf{Eventos}}
+\end{center}
+
+# Eventos
+
+\definecolor{custom}{RGB}{196,174,84}
+\setbeamercovered{transparent}
+\begin{columns}[T]
+    \begin{column}{.5\textwidth}
+        \Large{\textbf{Cómo funcionan}}
+        {\color{custom}\par\noindent\rule{1.2\textwidth}{0.9pt}}
+            \begin{itemize}
+                \item<1-> Notificaciones
+                \item<2-> Listeners y Subscribers
+            \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+        \begin{itemize}[<+->]
+            \item[]
+                {\includegraphics[width=0.8\textwidth]{/home/unaj/symfony.png}}
+        \end{itemize}
+    \end{column}
+\end{columns}
+
+
+#    
+\begin{center}
+    \huge\textbf{Eventos: Doctrine}\
+    
+    Relacionados al ciclo de vida de una entidad
+
+\end{center}
+
+    
+#
+
+\begin{center}
+    \huge{\textbf{PostLoad}}
+
+    Una vez que la entidad es cargada
+\end{center}
+
+# Integración
+
+
 
