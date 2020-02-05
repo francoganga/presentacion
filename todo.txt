@@ -1,0 +1,14 @@
+introduccion: problema
+necesidaes/ambito/
+componentes
+
+Desarrollo
+modelado
+herencia
+clases admin
+admins compuestos
+vista persona
+Integracion
+
+Problemas encontrados: Mover problema en admin aca
+dificultades: hablar acerca de curva de aprendizaje, inexperiencia, etc
