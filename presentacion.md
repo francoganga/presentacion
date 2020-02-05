@@ -16,10 +16,18 @@ header-includes:
 
 # Problema
 
-La Universidad no posee un sistema que administre la información sobre las actividades
-realizadas por cada persona: actualmente, estos datos son almacenados en planillas excel o
-documentos escritos.
-El propósito de este proyecto es ofrecer una solución a este problema.
+\begin{columns}
+    \begin{column}{.5\textwidth}
+    \centering
+    \fontsize{20}{10}\selectfont
+        \textbf{
+                Problema
+        }
+    \end{column}
+    \begin{column}{.5\textwidth}
+    \includegraphics[width=\textwidth]{/home/unaj/presentacion/idea.png}
+    \end{column}
+\end{columns}
 
 
 #
@@ -145,17 +153,6 @@ El propósito de este proyecto es ofrecer una solución a este problema.
 
 
 
-# Acciones: Lista
-
-\includegraphics[width=\textwidth]{/home/unaj/sonata_lista.png}
-
-# Acciones: Creación
-
-\includegraphics[width=\textwidth]{/home/unaj/sonata_crear.png}
-
-# Acciones: Edición
-
-\includegraphics[width=\textwidth]{/home/unaj/sonata_editar.png}
 
 # Doctrine
 
@@ -206,41 +203,8 @@ El propósito de este proyecto es ofrecer una solución a este problema.
     \end{column}
 \end{columns}
 
-#
-
-\begin{center}
-    \huge{\textbf{Instalación y Configuración}}
-\end{center}
 
 
-# Instalación y configuración
-
-    
-\definecolor{custom}{RGB}{196,174,84}
-\setbeamercovered{transparent}
-\begin{columns}[T]
-    \begin{column}{.5\textwidth}
-        \Large{\textbf{Involucra}}
-        {\color{custom}\par\noindent\rule{1.2\textwidth}{0.9pt}}
-            \begin{itemize}
-                \item<1-> Doctrine
-                \item<2-> FOSUser
-                \item<3-> Security
-                \item<4-> Routing
-                \item<5-> Sonata-User
-            \end{itemize}
-    \end{column}
-    \begin{column}{.5\textwidth}
-        \begin{itemize}[<+->]
-            \item[]
-                \only<1>{\includegraphics[width=0.8\textwidth]{/home/unaj/suser1.png}}
-                \only<2>{\includegraphics[width=0.8\textwidth]{/home/unaj/suser2.png}}
-                \only<3>{\includegraphics[width=0.8\textwidth]{/home/unaj/suser3.png}}
-                \only<4>{\includegraphics[width=0.8\textwidth]{/home/unaj/suser4.png}}
-                \only<5>{\includegraphics[width=0.8\textwidth]{/home/unaj/integracion.png}}
-        \end{itemize}
-    \end{column}
-\end{columns}
 
 #
 \begin{center}
@@ -269,35 +233,7 @@ El propósito de este proyecto es ofrecer una solución a este problema.
     \end{column}
 \end{columns}
 
-#
-\begin{center}
-\huge{\textbf{Serialización}}
-\end{center}
 
-# Serialización
-\begin{center}
-\includegraphics[width=\textwidth]{/home/unaj/serializationWorkflow.png}
-\end{center}
-
-# 
-
-\begin{center}
-    \huge\textbf{Contexto de Normalización y Desnormalización}\
-
-    Definen propiedades presentes en cada uno de los procesos
-\end{center}
-
-# Serialización
-
-    
-\definecolor{custom}{RGB}{196,174,84}
-\setbeamercovered{transparent}
-        \Large{\textbf{Grupos}}
-        {\color{custom}\par\noindent\rule{\textwidth}{0.9pt}}
-            \begin{itemize}
-                \item<1-> Permiten agrupar propiedades en cada contexto
-                \item<2-> Siguen relaciones
-            \end{itemize}
 
 
 
@@ -608,26 +544,6 @@ admin.movilidad_rtf:
     \end{column}
 \end{columns}
 
-# Solución {.b}
-
-    
-\definecolor{custom}{RGB}{196,174,84}
-\setbeamercovered{transparent}
-\begin{columns}[T]
-    \begin{column}{.8\textwidth}
-        \Large{\textbf{Traits}}
-        {\color{custom}\par\noindent\rule{1\textwidth}{0.9pt}}
-            \begin{itemize}
-                \item<1-> Métodos redefinidos por orden de precedencia
-                \item<2-> Cada admin mantiene su propia clase
-                \item<3-> Más flexible
-            \end{itemize}
-    \end{column}
-    \begin{column}{.2\textwidth}
-        \vfill
-        {\includegraphics[width=0.8\textwidth]{/home/unaj/trait.png}}
-    \end{column}
-\end{columns}
 
 
 #
@@ -743,7 +659,74 @@ admin.movilidad_rtf:
 \includegraphics[width=\textwidth]{/home/unaj/PPSDOC/image/vista_persona.png}
 \end{center}
 
+
 #
+
+\begin{center}
+    \huge{\textbf{API REST}}
+\end{center}
+
+
+# API REST: Configuración
+
+\begin{center}
+\huge{\textbf{Serialización}}
+\end{center}
+
+
+
+
+# API REST: Configuración
+
+\definecolor{custom}{RGB}{196,174,84}
+\setbeamercovered{transparent}
+\begin{columns}[T]
+    \begin{column}{.8\textwidth}
+        \Large{\textbf{Que es necesario}}
+        {\color{custom}\par\noindent\rule{1.2\textwidth}{0.9pt}}
+            \begin{itemize}
+                \item<1-> Definir entidad como recurso de API
+                \item<2-> Personalizar contextos de normalizacion
+            \end{itemize}
+    \end{column}
+    \begin{column}{.2\textwidth}
+        \begin{itemize}[<+->]
+            \item[]
+                {\includegraphics[width=0.8\textwidth]{/home/unaj/api-platform.png}}
+        \end{itemize}
+    \end{column}
+\end{columns}
+
+
+
+# Serialización
+\begin{center}
+\includegraphics[width=\textwidth]{/home/unaj/serializationWorkflow.png}
+\end{center}
+
+# 
+
+\begin{center}
+    \huge\textbf{Contexto de Normalización y Desnormalización}\
+
+    Definen propiedades presentes en cada uno de los procesos
+\end{center}
+
+# Serialización
+
+    
+\definecolor{custom}{RGB}{196,174,84}
+\setbeamercovered{transparent}
+        \Large{\textbf{Grupos}}
+        {\color{custom}\par\noindent\rule{\textwidth}{0.9pt}}
+            \begin{itemize}
+                \item<1-> Permiten agrupar propiedades en cada contexto
+                \item<2-> Siguen relaciones
+            \end{itemize}
+
+
+#
+
 
 \begin{center}
     \huge{\textbf{Integración con Mapuche}}
@@ -798,7 +781,8 @@ admin.movilidad_rtf:
 \end{columns}
 
 
-#    
+# Eventos
+
 \begin{center}
     \huge\textbf{Eventos: Doctrine}\
     
@@ -807,7 +791,7 @@ admin.movilidad_rtf:
 \end{center}
 
     
-#
+# Eventos
 
 \begin{center}
     \huge{\textbf{PostLoad}}
@@ -815,7 +799,202 @@ admin.movilidad_rtf:
     Una vez que la entidad es cargada
 \end{center}
 
-# Integración
+#
+
+\begin{center}
+    \huge{\textbf{Problemas Encontrados}}
+\end{center}
+
+
+
+# Problemas
+
+    
+    
+\definecolor{custom}{RGB}{196,174,84}
+\setbeamercovered{transparent}
+\begin{columns}[T]
+    \begin{column}{.7\textwidth}
+        \Large{\textbf{Problemas}}
+        {\color{custom}\par\noindent\rule{1.2\textwidth}{0.9pt}}
+            \begin{itemize}
+                \item<1->  Problema N + 1
+                \item<2->  Duplicación de código
+            \end{itemize}
+    \end{column}
+    \begin{column}{.3\textwidth}
+        \begin{itemize}[<+->]
+            \item[]
+                {\includegraphics[width=0.8\textwidth]{/home/unaj/dev.png}}
+        \end{itemize}
+    \end{column}
+\end{columns}
+
+#
+
+\begin{columns}
+    \begin{column}{.5\textwidth}
+    \centering
+    \fontsize{20}{10}\selectfont
+        \textbf{
+                Lazy Loading
+        }
+    \end{column}
+    \begin{column}{.5\textwidth}
+    \includegraphics[width=\textwidth]{/home/unaj/doctrine.png}
+    \end{column}
+\end{columns}
+
+# Lazy Loading - Proxy
+
+\definecolor{custom}{RGB}{196,174,84}
+\setbeamercovered{transparent}
+\begin{columns}[T]
+    \begin{column}{.7\textwidth}
+        \Large{\textbf{Consiste en:}}
+        {\color{custom}\par\noindent\rule{1.2\textwidth}{0.9pt}}
+            \begin{itemize}
+                \item<1-> Combinación de estrategias
+                \item<2-> Retrasan la inicialización del recurso
+                \item<3-> Objetos intermediarios
+            \end{itemize}
+    \end{column}
+    \begin{column}{.3\textwidth}
+        \begin{itemize}[<+->]
+            \item[]
+                {\includegraphics[width=0.8\textwidth]{/home/unaj/doctrine.png}}
+        \end{itemize}
+    \end{column}
+\end{columns}
+
+# Problema N + 1
+
+\definecolor{custom}{RGB}{196,174,84}
+\setbeamercovered{transparent}
+\begin{columns}[T]
+    \begin{column}{.7\textwidth}
+        \Large{\textbf{En qué consiste}}
+        {\color{custom}\par\noindent\rule{1.2\textwidth}{0.9pt}}
+            \begin{itemize}
+                \item<1-> Problema: Iteración sobre colección de actividades es lazy loaded
+                \item<2-> Solucion: Eager Loading, consulta manual a la base de datos
+            \end{itemize}
+    \end{column}
+    \begin{column}{.3\textwidth}
+        \begin{itemize}[<+->]
+            \item[]
+                {\includegraphics[width=0.8\textwidth]{/home/unaj/doctrine.png}}
+        \end{itemize}
+    \end{column}
+\end{columns}
+
+# Problema: Duplicación de Código
+
+## 
+
+\centering\huge\textbf{Cada admin simple utiliza y muestra la misma información }
+
+
+# Solución 
+
+    
+\definecolor{custom}{RGB}{196,174,84}
+\setbeamercovered{transparent}
+\begin{columns}[T]
+    \begin{column}{.8\textwidth}
+        \Large{\textbf{Traits}}
+        {\color{custom}\par\noindent\rule{1\textwidth}{0.9pt}}
+            \begin{itemize}
+                \item<1-> Métodos redefinidos por orden de precedencia
+                \item<2-> Cada admin mantiene su propia clase
+                \item<3-> Más flexible
+            \end{itemize}
+    \end{column}
+    \begin{column}{.2\textwidth}
+        \vfill
+        {\includegraphics[width=0.8\textwidth]{/home/unaj/trait.png}}
+    \end{column}
+\end{columns}
+
+
+
+
+
+
+# Acciones: Lista
+
+\includegraphics[width=\textwidth]{/home/unaj/sonata_lista.png}
+
+# Acciones: Creación
+
+\includegraphics[width=\textwidth]{/home/unaj/sonata_crear.png}
+
+# Acciones: Edición
+
+\includegraphics[width=\textwidth]{/home/unaj/sonata_editar.png}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
+
+\begin{center}
+    \huge{\textbf{Instalación y Configuración}}
+\end{center}
+
+
+
+# Instalación y configuración: Sonata User
+
+    
+\definecolor{custom}{RGB}{196,174,84}
+\setbeamercovered{transparent}
+\begin{columns}[T]
+    \begin{column}{.5\textwidth}
+        \Large{\textbf{Involucra}}
+        {\color{custom}\par\noindent\rule{1.2\textwidth}{0.9pt}}
+            \begin{itemize}
+                \item<1-> Doctrine
+                \item<2-> FOSUser
+                \item<3-> Security
+                \item<4-> Routing
+                \item<5-> Sonata-User
+            \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+        \begin{itemize}[<+->]
+            \item[]
+                \only<1>{\includegraphics[width=0.8\textwidth]{/home/unaj/suser1.png}}
+                \only<2>{\includegraphics[width=0.8\textwidth]{/home/unaj/suser2.png}}
+                \only<3>{\includegraphics[width=0.8\textwidth]{/home/unaj/suser3.png}}
+                \only<4>{\includegraphics[width=0.8\textwidth]{/home/unaj/suser4.png}}
+                \only<5>{\includegraphics[width=0.8\textwidth]{/home/unaj/integracion.png}}
+        \end{itemize}
+    \end{column}
+\end{columns}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
